@@ -1,0 +1,60 @@
+﻿@model IEnumerable<Riner.Models.Customers>
+
+@{
+    ViewData["Title"] = "Customers Information";
+}
+
+<h2>Customers Information</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DepartmentName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Country)
+            </th>
+            <th>
+                Profile Photo
+            </th>
+            <th>Update</th>
+            <th>Details</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DepartmentName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Country)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PhotofileName)
+            </td>
+
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.CustomerId">Edit</a> 
+                </td>
+                    <td>
+                <a asp-action="Details" asp-route-id="@item.CustomerId">Details</a> 
+                        </td>
+            <td>
+                <a asp-action="Delete" asp-route-id="@item.CustomerId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
