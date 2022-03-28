@@ -1,0 +1,8 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Katuramu Nicholus</h1>
+    <p><a href="http://www.amarinfinancial.com/">Amarine-Financial </a>First Interview.</p>
+</div>
